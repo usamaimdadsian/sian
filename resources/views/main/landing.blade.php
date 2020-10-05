@@ -1,0 +1,15 @@
+@extends('layouts.main')
+@section('styles')
+    @include('main.styles.cvdownload_popup')
+@endsection
+@section('content')
+    @include('inc.main.banner')
+    @include('inc.main.about_us')
+    @include('inc.main.brand')
+    @include('inc.main.features')
+    @include('inc.main.portfolio')
+    @include('inc.main.testimonial')
+@endsection
+@section('js')
+    @include('main.js.cvpop')
+@endsection
