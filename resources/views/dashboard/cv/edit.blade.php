@@ -23,7 +23,7 @@
                 </div>
                 <div id="base-style" class="card">
                     <div class="card-body">
-                        {{Form::model($cv ?? '', ['route' => 'admin.cv.store', 'class' => 'cv-form', 'files' => true])}}
+                        {{Form::model($cv ?? '', ['method' => 'put','route' => ['admin.cv.update',$cv->id], 'class' => 'cv-form', 'files' => true])}}
                             @include('dashboard.cv.inc.form',['name' => 'Update'])
                         {{Form::close()}}
 

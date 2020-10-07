@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-// ==========================================
+// ---------------------------------------------
 //                  LANDING
-// ==========================================
+// ---------------------------------------------
 Route::get('/','MainController@index')->name('main.landing');
+Route::post('/download/cv','MainController@download')->name('main.cv.download');
 Route::get('/about','MainController@about')->name('main.about');
 Route::get('/services','MainController@services')->name('main.services');
 Route::get('/portfolio','MainController@portfolio')->name('main.portfolio');
@@ -28,9 +29,9 @@ Auth::routes();
 
 
 
-// ===============================================
+// ----------------------------------------------
 //            ADMIN DASHBOARD
-// ==============================================
+// ----------------------------------------------
 Route::get('/admin/login','DashboardController@showLoginForm')->name('admin.login');
 Route::middleware('is_admin')->prefix('management')->as('admin.')->group(function(){
     Route::get('/','DashboardController@index')->name('dashboard.main');
@@ -46,9 +47,9 @@ Route::middleware('is_admin')->prefix('management')->as('admin.')->group(functio
 });
 
 
-// ===============================================
+// ----------------------------------------------
 //                 BLOGGER DASHBOARD
-// ==============================================
+// ----------------------------------------------
 Route::middleware('is_blogger')->prefix('blogger')->as('blogger.')->group(function(){
     Route::get('/dashboard','DashboardController@index')->name('dashboard.main');
 });

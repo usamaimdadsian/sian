@@ -40,18 +40,18 @@
           </button>
         </div>
         <div class="modal-body cv-body">
-            <form action="" method="post">
+            <form id="download-cv-frm" action="{{route('main.cv.download')}}" method="post">
                 @csrf
                 <ul class="cv-items">
-                    <li class="cv-item"><span>Network Engineer</span><div class="primary-radio"><input type="radio" class="cv-radio" id="network-cv" name="cv"><label for="network-cv"></label></div></li>
-                    <li class="cv-item"><span>Full Stack Web Developer</span><div class="primary-radio"><input type="radio" class="cv-radio" id="web-cv" name="cv"><label for="web-cv"></label></div></li>
-                    <li class="cv-item"><span>Embedded Programmer</span><div class="primary-radio"><input type="radio" class="cv-radio" id="embedded-cv" name="cv"><label for="embedded-cv"></label></div></li>
+                    @foreach ($cvs as $cv)
+                        <li class="cv-item"><span>{{$cv->title}}</span><div class="primary-radio"><input type="radio" class="cv-radio" id="cv-{{$cv->id}}" name="cv" value="{{$cv->id}}"><label for="cv-{{$cv->id}}"></label></div></li>
+                    @endforeach
                 </ul>
             </form>
         </div>
         <div class="modal-footer cv-footer">
             <a class="primary_btn tr-bg" data-dismiss="modal" href="#"><span>Close</span></a>
-            <a class="primary_btn" href="#"><span>Download</span></a>
+            <a class="primary_btn" data-dismiss="modal" onclick="document.getElementById('download-cv-frm').submit();" href="#"><span>Download</span></a>
         </div>
       </div>
     </div>

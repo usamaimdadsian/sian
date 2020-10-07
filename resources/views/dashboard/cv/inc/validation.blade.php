@@ -9,17 +9,11 @@
                 title: {
                     required: true,
                 }, 
-                cv_addr: {
-                    required: true,
-                }, 
             },
             messages: {
                 title: {
                     required: "Please enter your title.",
                 },
-                cv_addr: {
-                    required: "Please select cv.",
-                }
             },
         })
     }         

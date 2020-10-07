@@ -14,22 +14,6 @@
                 <button type="button" class="btn btn-success btn-floated" onclick="location.href='{{route('admin.cv.create')}}'"><span class="fa fa-plus"></span></button>
                 <div class="d-md-flex align-items-md-start">
                     <h1 class="page-title mr-sm-auto"> CVs </h1>
-                    <div class="btn-toolbar">
-                        <button type="button" class="btn btn-light"><i class="oi oi-data-transfer-download"></i> <span
-                                class="ml-1">Export</span></button> <button type="button" class="btn btn-light"><i
-                                class="oi oi-data-transfer-upload"></i> <span class="ml-1">Import</span></button>
-                        <div class="dropdown">
-                            <button type="button" class="btn btn-light" data-toggle="dropdown"><span>More</span> <span
-                                    class="fa fa-caret-down"></span></button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <div class="dropdown-arrow"></div><a href="#" class="dropdown-item">Add tasks</a> <a
-                                    href="#" class="dropdown-item">Invite members</a>
-                                <div class="dropdown-divider"></div><a href="#" class="dropdown-item">Share</a> <a
-                                    href="#" class="dropdown-item">Archive</a> <a href="#"
-                                    class="dropdown-item">Remove</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </header>
 

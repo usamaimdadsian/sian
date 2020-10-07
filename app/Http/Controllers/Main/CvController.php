@@ -56,7 +56,8 @@ class CvController extends Controller
      */
     public function show(Cv $cv)
     {
-        //
+        $path_of_file = $cv->cv_addr;
+        return response()->file($path_of_file);
     }
 
     /**
@@ -79,7 +80,17 @@ class CvController extends Controller
      */
     public function update(Request $request, Cv $cv)
     {
-        //
+        $this->validate($request,[
+            'title' => 'required|string',
+        ]);
+        $cv->title = $request->input('title');
+        if($request->hasFile('cv_addr'))
+        {
+            unlink($cv->cv_addr);
+            $cv->cv_addr = saveFile($request->file('cv_addr'));
+        }
+        $cv->update();
+        return redirect()->route('admin.cv.index');
     }
 
     /**
@@ -90,6 +101,8 @@ class CvController extends Controller
      */
     public function destroy(Cv $cv)
     {
-        //
+        unlink($cv->cv_addr);
+        $cv->delete();
+        return redirect()->route('admin.cv.index');
     }
 }

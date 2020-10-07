@@ -1,3 +1,11 @@
+<style>
+    .usama-imdad-sian
+    {
+        background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%), radial-gradient(circle at top left, #4458dc, #854fee);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+</style>
 <header class="header_area">
     <div class="main_menu">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -5,7 +13,7 @@
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <a class="navbar-brand logo_h" href="{{route('main.landing')}}">
                     {!!file_get_contents("img/logo.svg")!!}
-                    <span style="color: #1b1464;font-size: 24px;">Usama Imdad Sian</span>
+                    <span class="usama-imdad-sian" style="color: #1b1464;font-size: 24px;">Usama Imdad Sian</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
