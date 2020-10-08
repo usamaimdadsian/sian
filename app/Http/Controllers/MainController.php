@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Main\Cv;
+use App\Models\Main\Project;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -10,7 +11,8 @@ class MainController extends Controller
     public function index()
     {
         $cvs = Cv::all();
-        return view('main.landing',compact('cvs'));
+        $projects = Project::all();
+        return view('main.landing',compact('cvs','projects'));
     }
 
     public function about()
@@ -26,7 +28,13 @@ class MainController extends Controller
 
     public function portfolio()
     {
-        return view('main.portfolio');
+        $projects = Project::all();
+        return view('main.portfolio',compact('projects'));
+    }
+
+    public function showPortfolio(Project $project)
+    {
+        return view('main.portfolio_detail',compact('project'));
     }
 
     public function contact()

@@ -21,18 +21,18 @@
                             edit</a> <a class="dropdown-item" href="#">Separate actions</a>
                     </div>
                 </div>
-                Name
+                Title
             </th>
-            <th> Roll Number </th>
-            <th> Father Name </th>
-            <th> CNIC </th>
-            <th> Date of Birth </th>
+            <th> Completed at </th>
+            <th>Rating</th>
+            <th>Client</th>
+            <th>Status</th>
             <th style="width:100px; min-width:100px;"> &nbsp; </th>
         </tr>
     </thead>
 
     <tbody>
-        @foreach ($students as $key=>$student)
+        @foreach ($projects as $key=>$project)
             <tr>
                 <td class="align-middle col-checker">
                     <div class="custom-control custom-control-nolabel custom-checkbox">
@@ -42,39 +42,19 @@
                 </td>
                 <td>
                     <a href="#" class="tile tile-img mr-1"><img class="img-fluid"
-                            src="{{asset($student->pic_address)}}" alt="Card image cap"></a> <a
-                    href="#">{{$student->first_name}} {{$student->last_name}}</a>
+                            src="{{asset($project->pic_addr)}}" alt="Card image cap"></a> <a
+                    href="#">{{$project->title}}</a>
                 </td>
-                <td class="align-middle"> {{$student->roll_no}} </td>
-                <td class="align-middle"> {{$student->father_name}} </td>
-                <td class="align-middle"> {{$student->cnic}} </td>
-                <td class="align-middle"> {{$student->date_of_birth}} </td>
+                <td class="align-middle">
+                    {{$project->completed}}    
+                </td>
+                <td>{{$project->rating}}</td>
+                <td>{{$project->client}}</td>
+                <td>{{$project->status}}</td>
                 <td class="align-middle text-right">
-                    <a href={{route('student.edit',[$student->id])}} title="Edit" class="btn btn-sm btn-icon btn-secondary"><i
+                    <a href={{route('admin.project.edit',[$project->id])}} title="Edit" class="btn btn-sm btn-icon btn-secondary"><i
                             class="fa fa-pencil-alt"></i> <span class="sr-only">Edit</span></a>
-                    @if ($status !== 1)
-                        <form action={{route('student.restore',[$student->id])}} title="Restore" method="post" class="btn btn-sm btn-icon btn-secondary">
-                            @csrf
-                            <a href="javascript:;" onclick="parentNode.submit();" class="btn btn-sm btn-icon btn-secondary"><i
-                                class="fas fa-undo"></i> <span
-                                class="sr-only">Restore</span></a>
-                        </form>
-                    @endif
-                    @if ($status == 1)
-                        <form action={{route('student.block',[$student->id])}} title="Block" method="post" class="btn btn-sm btn-icon btn-secondary">
-                            @csrf
-                            <a href="javascript:;" onclick="parentNode.submit();" class="btn btn-sm btn-icon btn-secondary"><i
-                                class="fas fa-ban"></i> <span
-                                class="sr-only">Ban</span></a>
-                        </form>
-                        <form action={{route('student.suspend',[$student->id])}} title="Suspend" method="post" class="btn btn-sm btn-icon btn-secondary">
-                            @csrf
-                            <a href="javascript:;" onclick="parentNode.submit();" class="btn btn-sm btn-icon btn-secondary"><i
-                                class="fas fa-pause"></i> <span
-                                class="sr-only">Suspend</span></a>
-                        </form>
-                    @endif      
-                    <form action={{route(($status == 4)?'student.destroy':'student.softdestroy',[$student->id])}} title="Delete" method="post" class="btn btn-sm btn-icon btn-secondary">
+                    <form action={{route('admin.project.destroy',[$project->id])}} title="Delete" method="post" class="btn btn-sm btn-icon btn-secondary">
                         @csrf
                         @method('delete')
                         <a href="javascript:;" onclick="parentNode.submit();" class="btn btn-sm btn-icon btn-secondary"><i

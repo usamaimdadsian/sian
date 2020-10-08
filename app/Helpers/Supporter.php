@@ -17,6 +17,8 @@ class Supporter
                 return 'Portfolio';
             case 'main.contact':
                 return 'Contact';
+            case 'main.portfolio.show':
+                return 'Project Detail';
         }
         return "";
     }
@@ -52,6 +54,26 @@ class Supporter
                 
                 break;
         }
+    }
+
+    public static function getRating($val)
+    {
+        $html = "<i class=\"fa fa-star\"></i>";
+        $html_t = "<i class=\"fa fa-star\" style=\"color: gray;\"></i>";
+        $html1 = "";
+        $html2 = "";
+
+        for($i = 0; $i < $val; $i++)
+        {
+            $html1 .= $html;
+        }
+        for($i = 0; $i < 5-$val; $i++)
+        {
+            $html2 .= $html_t;
+        }
+
+        $html = $html1.$html2;
+        return $html;
     }
 
 

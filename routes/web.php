@@ -21,6 +21,7 @@ Route::post('/download/cv','MainController@download')->name('main.cv.download');
 Route::get('/about','MainController@about')->name('main.about');
 Route::get('/services','MainController@services')->name('main.services');
 Route::get('/portfolio','MainController@portfolio')->name('main.portfolio');
+Route::get('/portfolio/{project}/explain','MainController@showPortfolio')->name('main.portfolio.show');
 Route::get('/contact','MainController@contact')->name('main.contact');
 
 Auth::routes();

@@ -13,6 +13,7 @@
     <meta property="og:url" content="index-2.html">
     <meta property="og:site_name" content="SMS">
     @include('inc.dashboard.header-imports')
+    @yield('styles')
 </head>
 <body>
     <div class="app">

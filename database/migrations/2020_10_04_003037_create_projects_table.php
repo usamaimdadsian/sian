@@ -19,8 +19,9 @@ class CreateProjectsTable extends Migration
             $table->text('description');
             $table->integer('rating')->range(1,5)->nullable();
             $table->string('client')->nullable();
-            $table->date('completed')->nullable();
-            $table->text('explain');
+            $table->text('completed')->nullable();
+            $table->text('explain')->nullable();
+            $table->enum('status',['popular','latest','upcoming']);
             $table->string('pic_addr');
             $table->timestamps();
         });
