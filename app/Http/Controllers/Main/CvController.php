@@ -43,7 +43,7 @@ class CvController extends Controller
         ]);
         $cv = new Cv();
         $cv->title = $request->input('title');
-        $cv->cv_addr = saveFile($request->file('cv_addr'));
+        $cv->cv_addr = saveFile($request->file('cv_addr'),"");
         $cv->save();
         return redirect()->route('admin.cv.index');
     }
@@ -87,7 +87,7 @@ class CvController extends Controller
         if($request->hasFile('cv_addr'))
         {
             unlink($cv->cv_addr);
-            $cv->cv_addr = saveFile($request->file('cv_addr'));
+            $cv->cv_addr = saveFile($request->file('cv_addr'),"");
         }
         $cv->update();
         return redirect()->route('admin.cv.index');

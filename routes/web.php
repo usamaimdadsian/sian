@@ -23,6 +23,10 @@ Route::get('/services','MainController@services')->name('main.services');
 Route::get('/portfolio','MainController@portfolio')->name('main.portfolio');
 Route::get('/portfolio/{project}/explain','MainController@showPortfolio')->name('main.portfolio.show');
 Route::get('/contact','MainController@contact')->name('main.contact');
+Route::post('/newsletter/subscribe','Main\NewsletterController@store')->name('main.newsletter.subscribe');
+Route::get('/hireme','MainController@hireMe')->name('main.hireme');
+Route::post('hireme','MainController@hireFormSub')->name('main.hireme.sub');
+Route::post('/attachments/upload','MainController@uploadAttachments');
 
 Auth::routes();
 

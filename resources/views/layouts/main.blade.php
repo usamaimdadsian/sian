@@ -33,11 +33,11 @@
 	<script src="{{asset('js/imagesloaded.pkgd.min.js')}}"></script>
 	<script src="{{asset('js/isotope-min.js')}}"></script>
 	<script src="{{asset('js/owl.carousel.min.js')}}"></script>
-	<script src="{{asset('js/jquery.ajaxchimp.min.js')}}"></script>
+	{{-- <script src="{{asset('js/jquery.ajaxchimp.min.js')}}"></script> --}}
 	<script src="{{asset('js/mail-script.js')}}"></script>
 	<!--gmaps Js-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-	<script src="{{asset('js/gmaps.min.js')}}"></script>
+	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script> --}}
+	{{-- <script src="{{asset('js/gmaps.min.js')}}"></script> --}}
 	<script src="{{asset('js/theme.js')}}"></script>
 	@yield('js')
 </body>

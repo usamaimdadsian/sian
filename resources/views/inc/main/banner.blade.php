@@ -8,7 +8,7 @@
                         <h1 class="text-uppercase">I am Usama Imdad</h1>
                         <h5 class="text-uppercase">Full Stack Web Developer, Network Engineer, Embedded Programmer</h5>
                         <div class="d-flex align-items-center">
-                            <a class="primary_btn" href="#"><span>Hire Me</span></a>
+                            <a class="primary_btn" href="{{route('main.hireme')}}"><span>Hire Me</span></a>
                             <a class="primary_btn tr-bg" data-toggle="modal" data-target="#cv-download" href="#"><span>Get CV</span></a>
                         </div>
                     </div>

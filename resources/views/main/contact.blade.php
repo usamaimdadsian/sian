@@ -21,7 +21,7 @@
                         <div class="info_item">
                             <i class="lnr lnr-home"></i>
                             <h6>Punjab, Pakistan</h6>
-                            <p>Village Sooianwala, City Hafizabad</p>
+                            <p>Hafizabad</p>
                         </div>
                         <div class="info_item">
                             <i class="lnr lnr-phone-handset"></i>
@@ -32,6 +32,11 @@
                             <i class="lnr lnr-envelope"></i>
                             <h6><a href="#">usamaimdadsian@gmail.com</a></h6>
                             <p>Send me your query anytime!</p>
+                        </div>
+                        <div class="info_item">
+                            <i class="lnr lnr-camera-video"></i>
+                            <h6><a href="https://join.skype.com/invite/QdImYWlVMAUy">usamaimdadsian</a></h6>
+                            <p>Connect with me on Skype!</p>
                         </div>
                     </div>
                 </div>

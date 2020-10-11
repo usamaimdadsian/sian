@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\RemoveUnusedFilesEvent;
 use App\Models\Main\Cv;
 use App\Models\Main\Project;
 use Illuminate\Http\Request;
+use App\Http\Requests\HireRequest;
+use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
@@ -40,6 +43,41 @@ class MainController extends Controller
     public function contact()
     {
         return view('main.contact');
+    }
+
+    public function hireMe()
+    {
+        return view('main.hireme');
+    }
+
+    public function hireFormSub(HireRequest $request)
+    {
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $organization = $request->input('organization');
+        $address = $request->input('address');
+        $project_name = $request->input('project_name');
+        $technologies = $request->input('technologies');
+        $complete_date = $request->input('complete_date');
+        $budget = $request->input('budget');
+        $project_description = $request->input('project_description');
+        $files = $request->input('files');
+        
+        DB::insert('insert into hiring_projects (name, email,organization,address,project_name,technologies,complete_date,budget,project_description,files) values (?, ?,?,?,?,?,?,?,?,?)', [$name,$email,$organization,$address,$project_name,$technologies,$complete_date,$budget,$project_description,$files]);
+        event(new RemoveUnusedFilesEvent());
+        return redirect()->back()->with('message', 'I have received your request, I will give you my response in 24 hours on your email.');
+    }
+
+    public function uploadAttachments(Request $request)
+    {
+        $html = '';
+        if($request->hasFile('file'))
+        {
+            $file = $request->file('file');
+            $html .=  saveFile($file,"hiringFiles/");
+        }
+        $html = str_replace("storage/","|storage/",$html);
+        return response()->json(['addr'=>$html]);
     }
 
     public function download(Request $request)

@@ -45,7 +45,7 @@ class ProjectController extends Controller
         $project->client = $request->input('client');
         $project->completed = $request->input('completed');
         $project->explain = $request->input('explain');
-        $project->pic_addr = saveFile($request->file('pic_addr'));
+        $project->pic_addr = saveFile($request->file('pic_addr'),"");
         $project->status = $request->input('status');
         $project->save();
         return redirect()->route('admin.project.index');
@@ -85,7 +85,7 @@ class ProjectController extends Controller
         if($request->hasFile('pic_addr'))
         {
             unlink('pic_addr');
-            $project->pic_addr = saveFile($request->file('pic_addr'));
+            $project->pic_addr = saveFile($request->file('pic_addr'),"");
         }
         $project->title = $request->input('title');
         $project->description = $request->input('description');

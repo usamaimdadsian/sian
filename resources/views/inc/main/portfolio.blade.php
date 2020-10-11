@@ -19,25 +19,27 @@
 
         <div class="filters-content">
             <div class="row portfolio-grid justify-content-center">
-                @foreach ($projects as $project)
-                    <div class="col-lg-4 col-md-6 all {{$project->status}}">
-                        <div class="portfolio_box">
-                            <div class="single_portfolio">
-                                <img class="img-fluid w-100" src="{{asset($project->pic_addr)}}" alt="{{$project->title}}">
-                                <div class="overlay"></div>
-                                <a href="{{asset($project->pic_addr)}}" class="img-gal">
-                                    <div class="icon">
-                                        <span class="lnr lnr-cross"></span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="short_info">
-                                <h4><a href="{{route('main.portfolio.show',['project' => $project->id])}}">{{$project->title}}</a></h4>
-                                <p>{{$project->client}}</p>
+                @if (isset($projects))
+                    @foreach ($projects as $project)
+                        <div class="col-lg-4 col-md-6 all {{$project->status}}">
+                            <div class="portfolio_box">
+                                <div class="single_portfolio">
+                                    <img class="img-fluid w-100" src="{{asset($project->pic_addr)}}" alt="{{$project->title}}">
+                                    <div class="overlay"></div>
+                                    <a href="{{asset($project->pic_addr)}}" class="img-gal">
+                                        <div class="icon">
+                                            <span class="lnr lnr-cross"></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="short_info">
+                                    <h4><a href="{{route('main.portfolio.show',['project' => $project->id])}}">{{$project->title}}</a></h4>
+                                    <p>{{$project->client}}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>

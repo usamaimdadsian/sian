@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Main;
 
+use App\Events\NewUserHasSubscribedEvent;
+use Illuminate\Http\Request;
 use App\Models\Main\Newsletter;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 class NewsletterController extends Controller
 {
@@ -36,7 +37,9 @@ class NewsletterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Newsletter::create($request->all());
+        event(new NewUserHasSubscribedEvent($user));
+        return response()->json(['msg' => 'Thank you for subscribing'],200);
     }
 
     /**

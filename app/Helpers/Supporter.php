@@ -19,6 +19,8 @@ class Supporter
                 return 'Contact';
             case 'main.portfolio.show':
                 return 'Project Detail';
+            case 'main.hireme':
+                return 'Hire Me';
         }
         return "";
     }

@@ -43,9 +43,11 @@
             <form id="download-cv-frm" action="{{route('main.cv.download')}}" method="post">
                 @csrf
                 <ul class="cv-items">
-                    @foreach ($cvs as $cv)
-                        <li class="cv-item"><span>{{$cv->title}}</span><div class="primary-radio"><input type="radio" class="cv-radio" id="cv-{{$cv->id}}" name="cv" value="{{$cv->id}}"><label for="cv-{{$cv->id}}"></label></div></li>
-                    @endforeach
+                    @isset($cvs)
+                        @foreach ($cvs as $cv)
+                            <li class="cv-item"><span>{{$cv->title}}</span><div class="primary-radio"><input type="radio" class="cv-radio" id="cv-{{$cv->id}}" name="cv" value="{{$cv->id}}"><label for="cv-{{$cv->id}}"></label></div></li>
+                        @endforeach
+                    @endisset
                 </ul>
             </form>
         </div>
@@ -56,3 +58,4 @@
       </div>
     </div>
 </div>
+

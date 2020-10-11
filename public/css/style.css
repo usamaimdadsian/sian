@@ -214,7 +214,7 @@ button:focus {
 .header_area {
   position: absolute;
   width: 100%;
-  z-index: 9999;
+  z-index: 999;
   background: #ffffff; }
   .header_area .menu_nav {
     width: 100%; }
@@ -1886,7 +1886,7 @@ h6 {
   display: block;
   width: 100%;
   line-height: 40px;
-  border: none;
+  border: 1px solid gainsboro;
   outline: none;
   background: #f9f9ff;
   padding: 0 20px;
@@ -1894,13 +1894,15 @@ h6 {
   resize: none; }
 
 .single-textarea:focus {
-  outline: none; }
+  outline: none;
+  border: 1px solid #f8b600
+}
 
 .single-input-primary {
   display: block;
   width: 100%;
   line-height: 40px;
-  border: 1px solid transparent;
+  border: 1px solid gainsboro;
   outline: none;
   background: #f9f9ff;
   padding: 0 20px; }
