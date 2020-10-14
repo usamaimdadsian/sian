@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('Roboto-Regular.ttf');
+  }
+  
+  /* cyrillic-ext */
+  @font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src:url('Roboto-Medium.ttf');
+  }
+  
+  /* cyrillic-ext */
+  @font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  src: url('Rubik/static/Rubik-Regular.ttf');
+  }

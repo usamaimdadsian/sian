@@ -1,0 +1,61 @@
+{
+    "0":{
+      "id" : 0,
+      "title": "Dashboard",
+      "route": "admin.dashboard.main",
+      "type": "admin",
+      "icon": "fas fa-home",
+      "parent": false,
+      "child_of": null
+    },
+
+    "1":{
+      "id" : 1,
+      "title": "Accounts",
+      "route": "admin.user.index",
+      "type": "admin",
+      "icon": "fas fa-user",
+      "parent": false,
+      "child_of": null
+    },
+
+    "2":{
+      "id" : 2,
+      "title": "Main",
+      "route": null,
+      "type": "admin",
+      "icon": "fab fa-sketch",
+      "parent": true,
+      "child_of": null
+    },
+
+    "3":{
+      "id" : 3,
+      "title": "Cvs",
+      "route": "admin.cv.index",
+      "type": "admin",
+      "icon": null,
+      "parent": false,
+      "child_of": 2
+    },
+
+    "4":{
+      "id" : 4,
+      "title": "Projects",
+      "route": "admin.project.index",
+      "type": "admin",
+      "icon": null,
+      "parent": false,
+      "child_of": 2
+    },
+
+    "5":{
+      "id" : 4,
+      "title": "Hirings",
+      "route": "admin.hiring.index",
+      "type": "admin",
+      "icon": null,
+      "parent": false,
+      "child_of": 2
+    }
+}

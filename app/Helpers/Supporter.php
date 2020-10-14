@@ -27,7 +27,7 @@ class Supporter
 
     public static function getSidebarEntries($user)
     {
-        $path = 'storage/navigation.json';
+        $path = 'navigation.json';
         $objects = json_decode(file_get_contents($path));
         $parent_nav = array();
         $child_nav = array();

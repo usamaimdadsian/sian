@@ -40,6 +40,7 @@ Auth::routes();
 Route::get('/admin/login','DashboardController@showLoginForm')->name('admin.login');
 Route::middleware('is_admin')->prefix('management')->as('admin.')->group(function(){
     Route::get('/','DashboardController@index')->name('dashboard.main');
+    Route::get('viewFiles','DashboardController@hiringFile')->name('dashboard.viewfile');
     // USER
     Route::resource('user','UserController');
     Route::delete('user/{user}/soft','UserController@softDestroy')->name('user.softdestroy');
@@ -49,6 +50,10 @@ Route::middleware('is_admin')->prefix('management')->as('admin.')->group(functio
     // -------
     Route::resource('cv','Main\CvController');
     Route::resource('project','Main\ProjectController');
+
+    // HIRING PROJECTS
+    Route::get('hiring/projects','DashboardController@hiringProjects')->name('hiring.index');
+    Route::delete('hiring/delete','DashboardController@hiringProjectsDelete')->name('hiring.destroy');
 });
 
 

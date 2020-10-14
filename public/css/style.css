@@ -16,7 +16,8 @@ Author E-mail: naimlasker@gmail.com
 /*font Variables*/
 /*Color Variables*/
 /*=================== fonts ====================*/
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,500|Rubik:500,700");
+/* @import url("https://fonts.googleapis.com/css?family=Roboto:400,500|Rubik:500,700"); */
+@import "fonts/Roboto/index.css";
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
 /* Medium Layout: 1280px */
