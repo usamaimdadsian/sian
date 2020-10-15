@@ -30,7 +30,7 @@ class ProjectRequest extends FormRequest
                 $rules['pic_addr'] = 'required | image' ;
             case 'PUT':
                 $rules = array_merge($rules,[
-                    'title' => 'required|max:50',
+                    'title' => 'required|max:500',
                     'description' => 'required',
                     'rating' => 'required',
                     'client' => 'required',
