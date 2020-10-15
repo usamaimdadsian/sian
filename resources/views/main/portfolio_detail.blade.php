@@ -35,7 +35,7 @@
                                     {!! Supporter::getRating($project->rating) !!}
                                 </li>
                                 <li><span>Client</span>: {{$project->client}}</li>
-                                <li><span>Completed</span>: {{$project->completed}}</li>
+                                <li><span>Completed</span>: {{date("F jS, Y",strtotime($project->completed))}}</li>
                             </ul>
                         </div>
                     </div>
