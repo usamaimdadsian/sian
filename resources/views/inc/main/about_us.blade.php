@@ -17,7 +17,7 @@
                     </p>
                     <p style="text-align: justify;">
                         Computer Engineering graduate from COMSAT University Islamabad, Lahore
-                        Campus. Skills include Networking, Web Development, Automation using PLC's, Computer Programming with multiple languages, Leadership
+                        Campus. Expert in Networking, Web Development, Automation using PLC's, Computer Programming with multiple languages, Leadership
                         Qualities, Teamwork, and Creative Thinking.
                     </p>
                     <p style="text-align: justify;">
