@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\RemoveUnusedFilesEvent;
+use App\Events\ClientMessageEvent;
 use App\Models\Main\Cv;
 use App\Models\Main\Project;
 use Illuminate\Http\Request;
+use App\Mail\ClientMessagesMail;
 use App\Http\Requests\HireRequest;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use App\Events\RemoveUnusedFilesEvent;
 
 class MainController extends Controller
 {
@@ -88,5 +91,17 @@ class MainController extends Controller
             'Content-Type: application/pdf',
         );
         return response()->download($file, 'Usama\'s Resume.pdf', $headers);
+    }
+
+    public function contactMail(Request $request)
+    {
+        $this->validate($request,[
+            'name' => 'required|string|max:50',
+            'email' => 'required|email',
+            'subject' => 'required|string|max:50',
+            'message' => 'required|string|max:1000'
+        ]);
+        event(new ClientMessageEvent($request->name, $request->email, $request->subject, $request->message));
+        return redirect()->back();
     }
 }

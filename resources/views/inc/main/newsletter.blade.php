@@ -10,7 +10,7 @@
                     <div class="subcribe-form" id="mc_embed_signup">
                         <form action="{{route('main.newsletter.subscribe')}}" method="post" class="subscription relative">
                             @csrf
-                            <input name="email" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required="" type="email">
+                            <input name="email" class="newsletter-email" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required="" type="email">
                             <button class="primary-btn submit-form hover d-inline" type="button">Subscribe</button>
                             <div class="info"></div>
                         </form>

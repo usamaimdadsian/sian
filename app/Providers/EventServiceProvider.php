@@ -2,11 +2,13 @@
 
 namespace App\Providers;
 
+use App\Events\ClientMessageEvent;
 use Illuminate\Support\Facades\Event;
 use App\Events\RemoveUnusedFilesEvent;
 use Illuminate\Auth\Events\Registered;
 use App\Listeners\WelcomNewUserListener;
 use App\Events\NewUserHasSubscribedEvent;
+use App\Listeners\ClientMessageListener;
 use App\Listeners\DeleteHireSubmissionFilesListener;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -27,7 +29,10 @@ class EventServiceProvider extends ServiceProvider
         ],
         RemoveUnusedFilesEvent::class => [
             DeleteHireSubmissionFilesListener::class,
-        ]
+        ],
+        ClientMessageEvent::class => [
+            ClientMessageListener::class,
+        ],
     ];
 
     /**

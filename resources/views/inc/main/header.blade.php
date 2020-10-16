@@ -7,7 +7,7 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <a class="navbar-brand logo_h" href="{{route('main.landing')}}">
-                    {!!file_get_contents("img/logo.svg")!!}
+                    <img src="{{asset('img/logo.png')}}" class="logo" style="width:90px;" alt="Usama Imdad Logo">
                     <span class="usama-imdad-sian">Usama Imdad Sian</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

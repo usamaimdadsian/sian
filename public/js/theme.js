@@ -77,7 +77,7 @@
 	/*---------------------------------------------------- */
 	var sub_frm = $('.subscription');
 	var url = sub_frm.attr('action');
-	var CSRF_TOKEN = $('input[name="_token"]').attr('value');
+	var CSRF_TOKEN = $('.subscription input[name="_token"]').attr('value');
 	$('.submit-form').click(function(){
 		$(".info").html('Submitting...')
 		$.ajax({
@@ -85,7 +85,7 @@
 			type: 'POST',
 			data: {
 				_token: CSRF_TOKEN,
-				 email:$("input[name = email]").val()
+				 email:$(".subscription .newsletter-email").val()
 			},
 			dataType: 'JSON',
 			success: function (data) { 
