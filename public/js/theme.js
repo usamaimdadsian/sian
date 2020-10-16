@@ -90,6 +90,12 @@
 			dataType: 'JSON',
 			success: function (data) { 
 				$(".info").html(data.msg); 
+			},
+			error: function(xhr){	
+				$('.info').html('');
+				$.each(xhr.responseJSON.errors, function(key,value) {
+					$('.info').append(value);
+				});
 			}
 		}); 
 	});

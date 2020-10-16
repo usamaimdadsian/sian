@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Main;
 
-use App\Events\NewUserHasSubscribedEvent;
 use Illuminate\Http\Request;
 use App\Models\Main\Newsletter;
 use App\Http\Controllers\Controller;
+use App\Events\NewUserHasSubscribedEvent;
+use Illuminate\Support\Facades\Validator;
 
 class NewsletterController extends Controller
 {
@@ -37,6 +38,15 @@ class NewsletterController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = ['email' => 'required|email|string|max:255|unique:newsletters,email'];
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails())
+        {
+            return response()->json(array(
+                'success' => false,
+                'errors' => $validator->getMessageBag()->toArray()
+            ), 400);
+        }
         $user = Newsletter::create($request->all());
         event(new NewUserHasSubscribedEvent($user));
         return response()->json(['msg' => 'Thank you for subscribing'],200);
