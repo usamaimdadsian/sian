@@ -3597,12 +3597,12 @@ h6 {
 } */
 
 .portfolio_box .short_info {
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 @media (max-width: 767px) {
     .portfolio_box .short_info {
-        margin-top: 20px;
+        margin-top: 10px;
     }
 }
 
